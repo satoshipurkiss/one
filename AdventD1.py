@@ -6,10 +6,9 @@ import numpy as np
 import math
 
 df = pd.read_excel('Elf Calories.xlsx')
-
 df = df.values
-Calories = df[:,0]
-ElfN = len(Calories)
+arr = df[:,0]
+ElfN = len(arr)
 Elves = np.zeros(ElfN)
 
 n = 0 
@@ -17,8 +16,8 @@ m = 0
 
 # create loop that loops round all rows in input file 
 while n < ElfN:
-    if math.isnan(Calories[n])== False:
-        Elves[m] = Elves[m]+(Calories[n])
+    if math.isnan(arr[n])== False:
+        Elves[m] = Elves[m]+(arr[n])
     else:
         m +=1
     n += 1
