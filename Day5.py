@@ -1,10 +1,10 @@
 #Advent of Code Day 4
 # Camp Cleanup
-from request_input_data import get_input
-data = get_input(4)
-
 import pandas as pd
 import numpy as np
+
+from request_input_data import get_input
+data = get_input(4)
 
 df = pd.read_excel('Sections.xlsx')
 
@@ -23,3 +23,4 @@ while n < ElfN:
     n += 1 # increase the count
 
 
+##################
