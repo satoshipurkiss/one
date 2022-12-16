@@ -16,7 +16,6 @@ overlaps = 0
 while n < ElfN:
     # splitting string into list and the list into two compartments
     Sections = list(arr[n])
-    #print(list(Sections))
 
     s = 4,3
     ranges = np.zeros(s)-1
@@ -46,24 +45,19 @@ while n < ElfN:
     print(ranges)
     #part 1 solution: 
     '''
-    if ranges[0,2] >= ranges[2,2] and ranges[1,2] <= ranges[3,2]:
+    if ranges[0,2] >= ranges[2,2] and ranges[1,2] <= ranges[3,2] or ranges[0,2] <= ranges[2,2] and ranges[1,2] >= ranges[3,2]:
         print('yes')
-        overlaps += 1
-    elif ranges[0,2] <= ranges[2,2] and ranges[1,2] >= ranges[3,2]:
-        print('yes2')
         overlaps += 1
     else:
         print('no')
     '''
-    #part 2 solution:
-    if ranges[0,2] >= ranges[2,2] and ranges[1,2] <= ranges[3,2] or ranges[0,2] <= ranges[2,2] and ranges[1,2] >= ranges[3,2]:
+    #part 2 solution: 
+    if ranges[1,2] < ranges[2,2] or ranges[3,2] < ranges[0,2]:
+        print('no')
+    else:
         print('yes')
         overlaps += 1
-    #elif 
-        #print('yes2')
-        #overlaps += 1
-    else:
-        print('no')
     n += 1 # increase the count
 
 print(overlaps)
+
