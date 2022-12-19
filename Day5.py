@@ -1,26 +1,48 @@
-#Advent of Code Day 4
-# Camp Cleanup
+# Advent of Code Day 5
+# Supply Stacks
+
 import pandas as pd
 import numpy as np
+#from builtins import str
 
-from request_input_data import get_input
-data = get_input(4)
-
-df = pd.read_excel('Sections.xlsx')
-
-df = df.values
-arr = df[:,0]
-ElfN = len(arr)
+df = pd.read_excel('CargoPlane.xlsx')
+print(df[0:8])
+arr = df.values[:,0]
+s = df.squeeze()
+# print(s)
+# s = s.str.split(']',expand = True)
+# print(s)
+# arr = df[:,0]
+ElfN = len(df.index)
 Elves = np.zeros(ElfN)
 n = 0
 
+# print(df[:,0])
+planeN = 0
 
+while planeN < 9:
+    
+    for i in arr:
+        print('i is ',i)
+        str(i)
+        for j in i:
+            print('j is ',j)
+            plane = "test"
+            spaces = 0
+            if j == "[":
+                plane += j
+            elif j == " ":
+                spaces += 1
+                print(spaces)
+            else:
+                plane += str(j)
+            print(plane)
+
+    planeN += 1
 # create loop that loops round all rows in input file 
 while n < ElfN:
     # splitting string into list and the list into two compartments
-    Sections = list(arr[n])
-
+    # Sections = s[n].squeeze
+    # print(s)
+    # s = s.str.split(' ',expand = True)
     n += 1 # increase the count
-
-
-##################
